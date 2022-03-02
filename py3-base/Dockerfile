@@ -1,4 +1,4 @@
-FROM python:3.6.8-alpine AS base
+FROM python:3.9-alpine AS base
 
 RUN apk update \
 	&& apk upgrade -U -a \
