@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+function do-it() {
+	cd $1
+	docker build --platform linux/amd64 . -t c17r/$1:latest
+	docker push c17r/$1:latest
+	cd ..
+}
+
+do-it py3-base
+do-it py3-build
+do-it py3-app
+do-it py3-webapp
