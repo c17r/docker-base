@@ -5,3 +5,5 @@ RUN apk update \
 	&& apk add --no-cache git \
 	&& python3 -m venv /venv \
 	&& /venv/bin/pip install --quiet --no-cache-dir -U pip
+
+ENV PATH=/venv/bin:$PATH
