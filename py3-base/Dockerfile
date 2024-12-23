@@ -1,9 +1,7 @@
-FROM python:3.12.8-alpine AS base
+FROM alpine:3.19 AS base
 
 RUN apk update \
 	&& apk upgrade -U -a \
-	&& apk add --no-cache git \
+	&& apk add --no-cache git python3 \
 	&& python3 -m venv /venv \
 	&& /venv/bin/pip install --quiet --no-cache-dir -U pip
-
-ENV PATH=/venv/bin:$PATH
